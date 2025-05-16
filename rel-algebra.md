@@ -1,27 +1,21 @@
 # Complete Guide to Relational Algebra (With Examples)
 
-## ✨ What is Relational Algebra?
-
-Relational Algebra is a formal language for querying and manipulating **relational databases**. It works with **relations (tables)** and provides a theoretical foundation for SQL and other query languages.
-
-E.F. Codd introduced relational algebra as the mathematical basis of relational databases.
+## 🌟 Overview
+Relational Algebra is a formal language for querying and manipulating **relational databases**. It provides a theoretical foundation for SQL and other query languages, introduced by E.F. Codd.
 
 ---
 
 ## ✅ Six Basic Operators of Relational Algebra
 
 ### 1. **Selection (σ)**
-
-Used to filter rows based on a condition (like WHERE in SQL).
+Filters rows based on a condition (similar to WHERE in SQL).
 
 **Syntax:**
-
 ```
 σ_condition(Relation)
 ```
 
 **Example:**
-
 ```
 Students:
 | id | name  | age |
@@ -34,7 +28,6 @@ Students:
 ```
 
 Result:
-
 ```
 | id | name  | age |
 |----|-------|-----|
@@ -45,23 +38,19 @@ Result:
 ---
 
 ### 2. **Projection (π)**
-
-Used to select specific columns (like SELECT in SQL).
+Selects specific columns (like SELECT in SQL).
 
 **Syntax:**
-
 ```
 π_column1, column2(Relation)
 ```
 
 **Example:**
-
 ```
 π_name, age(Students)
 ```
 
 Result:
-
 ```
 | name  | age |
 |-------|-----|
@@ -70,41 +59,31 @@ Result:
 | Eve   | 22  |
 ```
 
-If duplicate rows occur, they are removed.
-
 ---
 
 ### 3. **Rename (ρ)**
-
-Used to rename a relation or its attributes.
+Renames a relation or its attributes.
 
 **Syntax:**
-
 ```
 ρ_NewName(Relation)
 ```
 
 **Example:**
-
 ```
 ρ_StudentInfo(Students)
 ```
 
-Renames the "Students" relation to "StudentInfo".
-
 ---
 
 ### 4. **Union (∪)**
-
-Combines all rows from two relations (like UNION in SQL).
+Combines rows from two relations (like UNION in SQL).
 
 **Conditions:**
-
-* Same number of columns
-* Same data types (domains)
+- Same number of columns
+- Same data types
 
 **Syntax:**
-
 ```
 Relation1 ∪ Relation2
 ```
@@ -140,11 +119,9 @@ Result:
 ---
 
 ### 5. **Difference (-)**
-
 Returns rows in one relation that are not in the other (like EXCEPT in SQL).
 
 **Syntax:**
-
 ```
 Relation1 - Relation2
 ```
@@ -166,11 +143,9 @@ Result:
 ---
 
 ### 6. **Cartesian Product (×)**
-
 Combines every row of one relation with every row of another.
 
 **Syntax:**
-
 ```
 Relation1 × Relation2
 ```
@@ -209,8 +184,7 @@ Result:
 ## 🔗 Join Operations
 
 ### 1. **Equijoin**
-
-Join where attributes from two tables are compared for equality.
+Joins tables based on equality conditions.
 
 **Example:**
 
@@ -229,41 +203,27 @@ Result:
 ```
 
 ### 2. **Natural Join**
-
-Auto-joins tables on all common attributes with the same name.
+Auto-joins tables on common attributes.
 
 ### 3. **Theta Join**
-
-Join with any condition, not just equality (e.g., >, <, !=).
+Joins with conditions other than equality.
 
 ---
 
-## ⭐ Extended Operations
+## 🌟 Extended Operations
 
 ### 1. **Generalized Projection**
-
-Supports expressions (e.g., π\_salary \* 1.1(Employee))
+Supports expressions (e.g., π_salary * 1.1(Employee)).
 
 ### 2. **Aggregate Functions & Grouping**
-
-Operations like COUNT, AVG, MAX, SUM on groups of rows (like SQL GROUP BY)
-
-### 3. **Left Outer Join**
-
-Keeps all rows from the left relation; unmatched right rows are filled with NULLs.
-
-### 4. **Outer Union**
-
-Union of relations with different schemas (columns filled with NULLs where needed)
+Operations like COUNT, AVG, MAX, SUM on groups of rows.
 
 ---
 
 ## 🌳 Query Trees
-
-Visual representation of the order and nesting of operations. Helps with optimization.
+Visual representation of the order and nesting of operations.
 
 ---
 
 ## ✈️ Conclusion
-
-Relational Algebra is the backbone of query processing in relational databases. Mastering it strengthens your foundation in database theory and practical SQL usage.
+Relational Algebra is the backbone of query processing in relational databases. Mastering it strengthens your foundation in database theory and SQL usage.
